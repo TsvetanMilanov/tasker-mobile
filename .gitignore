@@ -59,3 +59,4 @@ typings/
 
 # NativeScript files
 platforms
+.cloud

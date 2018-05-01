@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="Tasker" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ActivityIndicator
+            busy="{{ isLoading }}"
+            width="200"
+            height="200"
+            visibility="{{ isLoading ? 'visible' : 'collapsed' }}" />
+        <StackLayout class="p-20" visibility="{{ isLoading ? 'hidden' : 'visible' }}">
+            <Image src="{{ userPicture }}" width="250" height="250" />
+            <Button text="Logout" tap="{{ logout }}" />
+        </StackLayout>
+    </StackLayout>
+</Page>

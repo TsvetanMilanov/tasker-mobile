@@ -4,6 +4,6 @@ if (global.TNS_WEBPACK) {
 
     // Register application modules
     // This will register each `root`, `page`, `fragment` postfixed xml, css, js, ts, scss file in the app/ folder
-    const context = require.context("~/", true, /(root|page|fragment)\.(xml|css|js|ts|scss|less|sass)$/);
+    const context = require.context("~/pages", true, /(root|page|fragment)\.(xml|css|js|ts|scss|less|sass)$/);
     global.registerWebpackModules(context);
 }

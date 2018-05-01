@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="Tasker" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <WebView id="login-web-view" src="{{ getLoginUrl() }}" />
+    </StackLayout>
+</Page>

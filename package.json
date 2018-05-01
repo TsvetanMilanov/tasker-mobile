@@ -1,14 +1,19 @@
 {
+  "name": "tasker-mobile",
+  "version": "0.1.0",
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.taskermobile"
+    "id": "org.nativescript.taskermobile",
+    "tns-android": {
+      "version": "4.0.0"
+    }
   },
   "dependencies": {
-    "nativescript-theme-core": "~1.0.4",
-    "tns-core-modules": "~4.0.0"
+    "nativescript-theme-core": "1.0.4",
+    "tns-core-modules": "4.0.0"
   },
   "devDependencies": {}
 }
