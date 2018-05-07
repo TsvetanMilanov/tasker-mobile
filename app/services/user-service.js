@@ -4,8 +4,9 @@ const http = require("http");
 
 const constants = require("../constants/constants");
 const localStorage = require("./local-storage");
+const config = require("./config-service");
 
-const userService = "https://avoe22vycg.execute-api.us-east-1.amazonaws.com/dev";
+const userService = config.getUsersServiceUrl();
 
 class UserService {
     saveUserToken(tokenInfo) {
@@ -36,14 +37,16 @@ class UserService {
                 return resolve(null);
             }
 
-            return http.request({
-                url: userService + "/info",
+            const req = {
+                url: userService + "/me",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${userToken.access_token}`
                 }
-            })
+            };
+
+            return http.request(req)
                 .then(res => {
                     if (res.statusCode >= 400) {
                         return reject(res.content ? res.content.toJSON() : new Error("http error"));

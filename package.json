@@ -9,11 +9,23 @@
     "id": "org.nativescript.taskermobile",
     "tns-android": {
       "version": "4.0.0"
+    },
+    "nativescript-env-file-variables": {
+      "OutputDir": "app",
+      "InputDir": "app",
+      "Stage": "dev"
     }
   },
   "dependencies": {
+    "nativescript-env-file": "git+https://github.com/TsvetanMilanov/nativescript-env-file.git",
     "nativescript-theme-core": "1.0.4",
     "tns-core-modules": "4.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11",
+    "nativescript-env-file": "file:plugins/nativescript-env-file"
+  }
 }

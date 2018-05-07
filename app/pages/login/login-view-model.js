@@ -1,6 +1,7 @@
 "use strict";
 
 const userService = require("../../services/user-service");
+const config = require("../../services/config-service");
 
 const loginResponseRegExp = /login_response=(.*)/;
 
@@ -27,12 +28,12 @@ class LoginViewModel {
     }
 
     getLoginUrl() {
-        const loginUrl = `https://tmidentity.eu.auth0.com/authorize?response_type=code&scope=${this._getScopes()}&client_id=K1p2sa2S5S5CjhLYgchZOmMa3xjNMKsl&redirect_uri=${this.getRedirectUrl()}`;
+        const loginUrl = `${config.getAuthorizeEndpoint()}?response_type=code&scope=${this._getScopes()}&client_id=${config.getAuthClientId()}&redirect_uri=${this.getRedirectUrl()}`;
         return loginUrl;
     }
 
     getRedirectUrl() {
-        return "https://kbv8qkx20h.execute-api.us-east-1.amazonaws.com/dev/callback";
+        return `${config.getAuthServiceUrl()}/callback`;
     }
 
     _getScopes() {

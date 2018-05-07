@@ -60,3 +60,8 @@ typings/
 # NativeScript files
 platforms
 .cloud
+hooks
+
+# Env files
+env.*.json
+env.json
