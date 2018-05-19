@@ -13,10 +13,6 @@ class ConfigService {
         return this._config["AuthClientId"];
     }
 
-    getAuthServiceUrl() {
-        return this._config["AuthServiceUrl"];
-    }
-
     getUsersServiceUrl() {
         return this._config["UsersServiceUrl"];
     }

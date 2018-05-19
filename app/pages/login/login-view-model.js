@@ -33,7 +33,7 @@ class LoginViewModel {
     }
 
     getRedirectUrl() {
-        return `${config.getAuthServiceUrl()}/callback`;
+        return `${config.getUsersServiceUrl()}/callback`;
     }
 
     _getScopes() {
